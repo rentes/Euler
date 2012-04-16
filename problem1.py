@@ -1,3 +1,7 @@
+# Project Euler - Problem 1
+# http://projecteuler.net/problem=1
+# Add all the natural numbers below one thousand that are multiples of 3 or 5.
+
 # sum all multiples of 3 or 5 below 1000
 a, b = 1, 0
 while a < 1000:

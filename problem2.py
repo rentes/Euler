@@ -1,3 +1,8 @@
+# Project Euler - Problem 2
+# http://projecteuler.net/problem=2
+# By considering the terms in the Fibonacci sequence whose values do not exceed
+# four million, find the sum of the even-valued terms.
+
 # fibonacci dictionary used for memoization
 fibs = {0:0, 1:1}
 # fibonacci definition
@@ -18,5 +23,5 @@ n = 1
 while count < 4000000:
     if fib(n) % 2 == 0: # we only want even fibonacci numbers
         count = count + fib(n) # add it to the sum
-    n = n + 1 # increment iteration
+    n += 1 # increment iteration
 print count # print final result
