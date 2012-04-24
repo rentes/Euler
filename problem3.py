@@ -4,7 +4,7 @@
 # What is the largest prime factor of the number 600851475143 ?
 
 # My idea to solve this problem:
-# 1 - discover all factors (prime or non-prime) of n
+# 1 - discover all prime factors of n
 # 2 - as we discover new factors, multiply them all to see if they equal n
 # 3 - if they equal n, we found all factors and only need to obtain the max
 # 4 - if not equal to n, continue search for factors until reaching n
@@ -16,21 +16,33 @@ def multiplyFactors(l):
     return v
 
 def factors(n):
-    # list with factors (prime or non-prime) of number n
+    # list with prime factors of number n
     l = []
     # first number to divide n
     m = 2
     # while all factors multiplied don't equal n and m is not n yet
-    while n != multiplyFactors(l) and m <= n:
+    while n != multiplyFactors(l) and m < n:
         if n % m == 0:
-            # factor found. let's add it to the list
-            l.append(m)
-            # sort the list for easy retrieval of last element
-            l.sort()
+            # variable to control if a factor is a multiple of the already
+            # discovered ones on the list, e.g., is a prime or not
+            divisors = 0
+            if len(l) != 0:
+                for x in l:
+                    if m % x == 0:
+                        divisors += 1
+                        break
+                # factor has no multiples yet, hence is prime!
+                if divisors == 0:
+                    # prime factor found. let's add it to the list
+                    l.append(m)
+                    # sort the list for easy retrieval of last element
+                    l.sort()
+            else:
+                l.append(m)
         # continue factor search
         m += 1
-    # uncomment next line to see list of discovered factors
-    # print l
+    # comment next line if you don't want to see list of discovered factors
+    print l
     return l
 
 # finally, print the last value of list of factors (we sorted the list)
