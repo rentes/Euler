@@ -4,4 +4,8 @@ Please see http://projecteuler.net/ for more info.
 
 Any particular solution for a given problem is written in Python.
 
+These solutions are NOT supposed to be PERFECT in terms of performance. Of course, I will be updating them to achieve better algorithmic performance, but the primary goal is to have FUN and to learn how to program in Python.
+
+Any suggestions/improvements, please fork this repository and/or contact me :)
+
 Have fun!

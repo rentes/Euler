@@ -59,6 +59,6 @@ while number1 < 1000:
     number2 = 1 # reset number2
     number1 += 1
 
-print 'largest is', largestPalindrome
 elapsed = (time.clock() - start)
+print 'largest is', largestPalindrome
 print 'elapsed time is', elapsed, 'seconds ~ ', int(elapsed)/60, 'minutes,', int(elapsed)%60, 'seconds,', int((elapsed-(int(elapsed)%60))*1000), 'milliseconds'
