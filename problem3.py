@@ -9,6 +9,8 @@
 # 3 - if they equal n, we found all factors and only need to obtain the max
 # 4 - if not equal to n, continue search for factors until reaching n
 
+import time
+
 def multiplyFactors(l):
     v = 1
     for x in l:
@@ -45,5 +47,11 @@ def factors(n):
     print l
     return l
 
+start = time.clock()
 # finally, print the last value of list of factors (we sorted the list)
 print factors(600851475143)[-1]
+elapsed = (time.clock() - start)
+print 'elapsed time is', elapsed, 'seconds ~ ', \
+    int(elapsed)/60, 'minutes,', \
+    int(elapsed)%60, 'seconds,', \
+    int((elapsed-(int(elapsed)%60))*1000), 'milliseconds'

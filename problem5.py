@@ -11,7 +11,9 @@ nr = 2
 
 def divideEvenly(n):
     divide = False
-    if n % 20 == 0 and n % 19 == 0 and n % 18 == 0 and n % 17 == 0 and n % 16 == 0 and n % 15 == 0 and n % 14 == 0 and n % 13 == 0 and n % 11 == 0:
+    if n % 20 == 0 and n % 19 == 0 and n % 18 == 0 and n % 17 == 0 and \
+       n % 16 == 0 and n % 15 == 0 and n % 14 == 0 and n % 13 == 0 and \
+       n % 11 == 0:
         divide = True
     return divide
 
@@ -26,4 +28,7 @@ while nr > 0:
             nr += 10 
 elapsed = (time.clock() - start)
 print nr
-print 'elapsed time is', elapsed, 'seconds ~ ', int(elapsed)/60, 'minutes,', int(elapsed)%60, 'seconds,', int((elapsed-(int(elapsed)%60))*1000), 'milliseconds'
+print 'elapsed time is', elapsed, 'seconds ~ ', \
+    int(elapsed)/60, 'minutes,', \
+    int(elapsed)%60, 'seconds,', \
+    int((elapsed-(int(elapsed)%60))*1000), 'milliseconds'

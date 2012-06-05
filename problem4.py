@@ -30,17 +30,21 @@ def isPalindrome(n):
         else:
             return False
     elif nrDigits == 4:
-        if n / 1000 == ((n % 1000) % 100) % 10 and (n % 1000) / 100 == ((n % 1000) % 100) / 10:
+        if n / 1000 == ((n % 1000) % 100) % 10 and \
+           (n % 1000) / 100 == ((n % 1000) % 100) / 10:
             return True
         else:
             return False
     elif nrDigits == 5:
-        if n / 10000 == (((n % 10000) % 1000) % 100) % 10 and (n % 10000) / 1000 == (((n % 10000) % 1000) % 100) / 10:
+        if n / 10000 == (((n % 10000) % 1000) % 100) % 10 and \
+           (n % 10000) / 1000 == (((n % 10000) % 1000) % 100) / 10:
             return True
         else:
             return False
     elif nrDigits == 6:
-        if n / 100000 == ((((n % 100000) % 10000) % 1000) % 100) % 10 and (n % 100000) / 10000 == ((((n % 100000) % 10000) % 1000) % 100) / 10 and ((n % 100000) % 10000) / 1000 == (((n % 100000) % 10000) % 1000) / 100:
+        if n / 100000 == ((((n % 100000) % 10000) % 1000) % 100) % 10 and \
+           (n % 100000) / 10000 == ((((n % 100000) % 10000) % 1000) % 100) / 10 and \
+           ((n % 100000) % 10000) / 1000 == (((n % 100000) % 10000) % 1000) / 100:
             return True
         else:
             return False
@@ -61,4 +65,7 @@ while number1 < 1000:
 
 elapsed = (time.clock() - start)
 print 'largest is', largestPalindrome
-print 'elapsed time is', elapsed, 'seconds ~ ', int(elapsed)/60, 'minutes,', int(elapsed)%60, 'seconds,', int((elapsed-(int(elapsed)%60))*1000), 'milliseconds'
+print 'elapsed time is', elapsed, 'seconds ~ ', \
+    int(elapsed)/60, 'minutes,', \
+    int(elapsed)%60, 'seconds,', \
+    int((elapsed-(int(elapsed)%60))*1000), 'milliseconds'
