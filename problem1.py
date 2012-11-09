@@ -4,7 +4,7 @@
 
 import time
 
-start = time.clock()
+start = time.time()
 # sum all multiples of 3 or 5 below 1000
 a, b = 1, 0
 while a < 1000:
@@ -12,7 +12,7 @@ while a < 1000:
         b += a # add a to integer responsible for the sum (b)
     a += 1 # let us check next integer
 
-elapsed = (time.clock() - start)
+elapsed = (time.time() - start)
 print b # after the while loop, print the sum stored on b
 print 'elapsed time is', elapsed, 'seconds ~ ', \
     int(elapsed)/60, 'minutes,', \
