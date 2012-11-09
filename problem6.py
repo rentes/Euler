@@ -11,7 +11,7 @@
 
 import time
 
-start = time.clock()
+start = time.time()
 
 sumSquare = 0
 squareSum = 0
@@ -23,7 +23,7 @@ for i in range(1, 101):
 # square of the sum
 squareSum = ((100 * 101)/2) ** 2
 
-elapsed = (time.clock() - start)
+elapsed = (time.time() - start)
 print 'elapsed time is', elapsed, 'seconds ~ ', \
     int(elapsed)/60, 'minutes,', \
     int(elapsed)%60, 'seconds,', \

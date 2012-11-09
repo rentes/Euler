@@ -24,13 +24,13 @@ def fib(n):
         fibs[n] = (fib((n-1)/2) ** 2) + (fib((n+1)/2) ** 2)
         return fibs[n]
 
-start = time.clock()
+start = time.time()
 while count < 4000000:
     if fib(n) % 2 == 0: # we only want even fibonacci numbers
         count = count + fib(n) # add it to the sum
     n += 1 # increment iteration
 
-elapsed = (time.clock() - start)
+elapsed = (time.time() - start)
 print count # print final result
 print 'elapsed time is', elapsed, 'seconds ~ ', \
     int(elapsed)/60, 'minutes,', \

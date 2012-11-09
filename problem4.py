@@ -52,7 +52,7 @@ def isPalindrome(n):
         print 'Number of digits higher than 6. Pass.'
         return False
 
-start = time.clock()
+start = time.time()
 while number1 < 1000:
     while number2 < 1000:
         product = number1 * number2
@@ -63,7 +63,7 @@ while number1 < 1000:
     number2 = 1 # reset number2
     number1 += 1
 
-elapsed = (time.clock() - start)
+elapsed = (time.time() - start)
 print 'largest is', largestPalindrome
 print 'elapsed time is', elapsed, 'seconds ~ ', \
     int(elapsed)/60, 'minutes,', \

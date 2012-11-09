@@ -17,7 +17,7 @@ def divideEvenly(n):
         divide = True
     return divide
 
-start = time.clock()
+start = time.time()
 while nr > 0:
     if divideEvenly(nr):
         break
@@ -25,8 +25,8 @@ while nr > 0:
         if nr == 2:
             nr += 8
         else:
-            nr += 10 
-elapsed = (time.clock() - start)
+            nr += 10
+elapsed = (time.time() - start)
 print nr
 print 'elapsed time is', elapsed, 'seconds ~ ', \
     int(elapsed)/60, 'minutes,', \
