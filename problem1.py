@@ -5,9 +5,9 @@
 import time
 
 def sumNumbers():
-    ''' Sums all natural numbers below 1000 that are multiples of 3 or 5
-        Returns: int
-
+    '''
+    Sums all natural numbers below 1000 that are multiples of 3 or 5
+    Returns: int
     '''
     a, b = 1, 0
     while a < 1000:
