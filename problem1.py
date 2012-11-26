@@ -4,17 +4,22 @@
 
 import time
 
-start = time.time()
-# sum all multiples of 3 or 5 below 1000
-a, b = 1, 0
-while a < 1000:
-    if ((a % 3 == 0) or (a % 5 == 0)): # if a is multiple or 3 or 5
-        b += a # add a to integer responsible for the sum (b)
-    a += 1 # let us check next integer
+def sumNumbers():
+    ''' Sums all natural numbers below 1000 that are multiples of 3 or 5
+        Returns: int
 
+    '''
+    a, b = 1, 0
+    while a < 1000:
+        if ((a % 3 == 0) or (a % 5 == 0)): # if a is multiple or 3 or 5
+            b += a # add a to the sum
+        a += 1 # let us check next integer
+    return b
+
+start = time.time()
+print (sumNumbers())
 elapsed = (time.time() - start)
-print b # after the while loop, print the sum stored on b
-print 'elapsed time is', elapsed, 'seconds ~ ', \
+print ('elapsed time is', elapsed, 'seconds ~ ', \
     int(elapsed)/60, 'minutes,', \
     int(elapsed)%60, 'seconds,', \
-    int((elapsed-(int(elapsed)%60))*1000), 'milliseconds'
+    int((elapsed-(int(elapsed)%60))*1000), 'milliseconds')
