@@ -2,9 +2,9 @@ This is my set of solutions for Project Euler problems.
 
 Please see http://projecteuler.net/ for more info.
 
-Any particular solution for a given problem is written in Python.
+Any particular solution for a given problem is written and tested in Python 3.
 
-These solutions are NOT supposed to be PERFECT in terms of performance. Of course, I will be updating them to achieve better algorithmic performance, but the primary goal is to have FUN and to learn how to program in Python, while solving these great mathematical problems.
+These solutions are NOT supposed to be PERFECT in terms of performance. Of course, I will be updating them to achieve better algorithmic performance, but the primary goal is to have FUN and to learn how to program in Python, while solving these simple yet challenging mathematical problems.
 
 Any suggestions/improvements, please fork this repository and/or contact me :)
 
