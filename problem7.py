@@ -44,4 +44,3 @@ print('elapsed time is', elapsed, 'seconds ~', \
     int(elapsed/60), 'minutes,', \
     int(elapsed)%60, 'seconds,', \
     int(elapsed*1000)-((int(elapsed)%60)*1000), 'milliseconds')
-
