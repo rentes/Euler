@@ -54,7 +54,7 @@ def factors(n):
     return l
 
 start = time.time()
-# finally, print the last value of list of factors (we sorted the list)
+# print the last value of list of factors (we sorted the list)
 print (factors(600851475143)[-1])
 elapsed = (time.time() - start)
 print ('elapsed time is', elapsed, 'seconds ~', \
