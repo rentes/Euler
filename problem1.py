@@ -1,7 +1,8 @@
-# Project Euler - Problem 1
-# http://projecteuler.net/problem=1
-# Add all the natural numbers below one thousand that are multiples of 3 or 5.
-
+'''
+Project Euler - Problem 1
+http://projecteuler.net/problem=1
+Add all the natural numbers below one thousand that are multiples of 3 or 5.
+'''
 import time
 
 def sumNumbers():
@@ -19,7 +20,7 @@ def sumNumbers():
 start = time.time()
 print (sumNumbers())
 elapsed = (time.time() - start)
-print ('elapsed time is', elapsed, 'seconds ~ ', \
-    int(elapsed)/60, 'minutes,', \
+print ('elapsed time is', elapsed, 'seconds ~', \
+    int(elapsed/60), 'minutes,', \
     int(elapsed)%60, 'seconds,', \
-    int((elapsed-(int(elapsed)%60))*1000), 'milliseconds')
+    int(elapsed*1000)-((int(elapsed)%60)*1000), 'milliseconds')

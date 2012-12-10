@@ -1,8 +1,9 @@
-# Project Euler - Problem 2
-# http://projecteuler.net/problem=2
-# By considering the terms in the Fibonacci sequence whose values do not exceed
-# four million, find the sum of the even-valued terms.
-
+'''
+Project Euler - Problem 2
+http://projecteuler.net/problem=2
+By considering the terms in the Fibonacci sequence whose values do not exceed
+four million, find the sum of the even-valued terms.
+'''
 import time
 
 # fibonacci dictionary used for memoization
@@ -12,10 +13,13 @@ count = 0
 # counter for iterations
 n = 1
 
-# fibonacci definition
-# based on Dijsktra's paper here: www.cs.utexas.edu/users/EWD/ewd06xx/EWD654.PDF
-# love it
 def fib(n):
+    '''
+    Fibonacci nth number definition
+    based on Dijsktra's paper here:
+    www.cs.utexas.edu/users/EWD/ewd06xx/EWD654.PDF
+    (I love it)
+    '''
     if n in fibs: return fibs[n]
     if n % 2 == 0:
         fibs[n] = ((2 * fib((n/2) - 1)) + fib(n/2)) * fib(n/2)
@@ -31,8 +35,8 @@ while count < 4000000:
     n += 1 # increment iteration
 
 elapsed = (time.time() - start)
-print count # print final result
-print 'elapsed time is', elapsed, 'seconds ~ ', \
-    int(elapsed)/60, 'minutes,', \
+print (count) # print final result
+print ('elapsed time is', elapsed, 'seconds ~', \
+    int(elapsed/60), 'minutes,', \
     int(elapsed)%60, 'seconds,', \
-    int((elapsed-(int(elapsed)%60))*1000), 'milliseconds'
+    int(elapsed*1000)-((int(elapsed)%60)*1000), 'milliseconds')
