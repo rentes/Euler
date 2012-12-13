@@ -1,26 +1,27 @@
-'''
+"""
 Project Euler - Problem 4
 http://projecteuler.net/problem=4
 A palindromic number reads the same both ways. The largest palindrome made
 from the product of two 2-digit numbers is 9009 = 91 x 99.
 Find the largest palindrome made from the product of two 3-digit numbers.
-'''
+"""
+
 import math
 import time
 
-def numberOfDigits(n):
-    '''
+def number_of_digits(n):
+    """
     Returns the number of digits an integer has
     Returns: int
-    '''
+    """
     return 1 + int(math.log10(n))
 
-def isPalindrome(n):
-    '''
+def is_palindrome(n):
+    """
     Finds if a given n is a palindrome
-    Returns: boolean (True if a palindrome, False otherwise)
-    '''
-    nrDigits = numberOfDigits(n)
+    Returns: bool (True if a palindrome, False otherwise)
+    """
+    nrDigits = number_of_digits(n)
     if nrDigits == 1:
         return True
     elif nrDigits == 2:
@@ -53,29 +54,30 @@ def isPalindrome(n):
         else:
             return False
     else:
-        print ('Number of digits higher than 6. Pass.')
+        print('Number of digits higher than 6. Pass.')
         return False
 
-def largestPalindrome():
-    # numbers for product
-    number1, number2 = 1, 2
-    # to record last found largest palindrome
-    largestPalindrome = 0
+def largest_palindrome():
+    """
+    Finds the largest palindrome made from the product of two 3-digit numbers
+    """
+    number1, number2 = 1, 2 # numbers for product
+    largestPalindrome = 0 # to record last found largest palindrome
     while number1 < 1000:
         while number2 < 1000:
             product = number1 * number2
-            if isPalindrome(product):
+            if is_palindrome(product):
                 if product > largestPalindrome:
                     largestPalindrome = product # update largest palindrome
             number2 += 1
         number2 = 2 # reset number2
         number1 += 1
-    print ('largest palindrome is', largestPalindrome)    
+    print('largest palindrome is', largestPalindrome)    
 
 start = time.time()
-largestPalindrome()
+largest_palindrome()
 elapsed = (time.time() - start)
-print ('elapsed time is', elapsed, 'seconds ~', \
+print('time:', elapsed, 'seconds ~', \
     int(elapsed/60), 'minutes,', \
     int(elapsed)%60, 'seconds,', \
     int(elapsed*1000)-((int(elapsed)%60)*1000), 'milliseconds')

@@ -1,4 +1,4 @@
-'''
+"""
 Project Euler - Problem 6
 http://projecteuler.net/problem=6
 The sum of the squares of the first ten natural numbers is,
@@ -9,17 +9,15 @@ Hence the difference between the sum of the squares of the first ten natural
 numbers and the square of the sum is 3025 - 385 = 2640.
 Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum.
-'''
+"""
 
 import time
 
-start = time.time()
-
-def sumSquareLessSquareSum():
-    '''
+def sum_square_less_square_sum():
+    """
     Finds the difference between the sum of the squares of the first one 
     hundred natural numbers and the square of the sum.
-    '''
+    """
     sumSquare = 0
     squareSum = 0
 
@@ -30,11 +28,12 @@ def sumSquareLessSquareSum():
     # square of the sum
     squareSum = ((100 * 101)/2) ** 2
     
-    print (int(squareSum - sumSquare))
+    print(int(squareSum - sumSquare))
 
+start = time.time()
+sum_square_less_square_sum()
 elapsed = (time.time() - start)
-sumSquareLessSquareSum()
-print ('elapsed time is', elapsed, 'seconds ~', \
+print('time:', elapsed, 'seconds ~', \
     int(elapsed/60), 'minutes,', \
     int(elapsed)%60, 'seconds,', \
     int(elapsed*1000)-((int(elapsed)%60)*1000), 'milliseconds')
