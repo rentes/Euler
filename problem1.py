@@ -19,11 +19,18 @@ def sum_numbers():
         a += 1  # let us check next integer
     return b
 
+
+def elapsed_time(elapsed):
+    """
+    Computes the amount of time the algorithm ran and outputs the time
+    """
+    min = int(elapsed / 60)  # minutes
+    s = int(elapsed) % 60  # seconds
+    ms = int(elapsed * 1000) - ((int(elapsed) % 60) * 1000)  # milliseconds
+
+    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
+
 start = time.time()
 print(sum_numbers())
 elapsed = (time.time() - start)
-print('time for this problem to complete:')
-print(elapsed, 'seconds ~')
-print(int(elapsed / 60), 'minutes,')
-print(int(elapsed) % 60, 'seconds,',)
-print(int(elapsed * 1000) - ((int(elapsed) % 60) * 1000), 'milliseconds')
+elapsed_time(elapsed)
