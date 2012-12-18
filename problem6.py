@@ -34,7 +34,7 @@ def sum_square_less_square_sum():
 
 def elapsed_time(elapsed):
     """
-    Computes the amount of time the algorithm ran and outputs the time
+    Computes the amount of time spent by the algorithm and outputs the time
     """
     min = int(elapsed / 60)  # minutes
     s = int(elapsed) % 60  # seconds
