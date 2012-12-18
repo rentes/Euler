@@ -7,6 +7,7 @@ What is the largest prime factor of the number 600851475143 ?
 
 import time
 
+
 def multiply_factors(l):
     """
     Multiplies discovered prime factors of n
@@ -17,6 +18,7 @@ def multiply_factors(l):
         v *= x
     return v
 
+
 def factors(n):
     """
     This function does the following to solve this problem:
@@ -25,8 +27,8 @@ def factors(n):
     3 - if they equal n, we found all factors and only need to obtain the max
     4 - if not equal to n, continue search for factors until reaching n
     """
-    l = [] # list with prime factors of number n
-    m = 2 # first number to divide n
+    l = []  # list with prime factors of number n
+    m = 2  # first number to divide n
     # while all factors multiplied don't equal n and m is not n yet
     while n != multiply_factors(l) and m < n:
         if n % m == 0:
@@ -52,10 +54,18 @@ def factors(n):
     print(l)
     return l
 
+
+def elapsed_time(elapsed):
+    """
+    Computes the amount of time the algorithm ran and outputs the time
+    """
+    min = int(elapsed / 60)  # minutes
+    s = int(elapsed) % 60  # seconds
+    ms = int(elapsed * 1000) - ((int(elapsed) % 60) * 1000)  # milliseconds
+
+    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
+
 start = time.time()
-print(factors(600851475143)[-1]) # print the last value of the list
+print(factors(600851475143)[-1])  # print the last value of the list
 elapsed = (time.time() - start)
-print('time:', elapsed, 'seconds ~', \
-    int(elapsed/60), 'minutes,', \
-    int(elapsed)%60, 'seconds,', \
-    int(elapsed*1000)-((int(elapsed)%60)*1000), 'milliseconds')
+elapsed_time(elapsed)
