@@ -32,5 +32,4 @@ def elapsed_time(elapsed):
 
 start = time.time()
 print(sum_numbers())
-elapsed = (time.time() - start)
-elapsed_time(elapsed)
+elapsed_time(time.time() - start)
