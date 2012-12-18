@@ -66,6 +66,6 @@ def elapsed_time(elapsed):
     print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
 
 start = time.time()
-print(factors(600851475143)[-1])  # print the last value of the list
+print(factors(600851475143)[-1])  # print the last value of the sorted list
 elapsed = (time.time() - start)
 elapsed_time(elapsed)
