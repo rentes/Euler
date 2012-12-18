@@ -9,6 +9,7 @@ numbers from 1 to 20?
 
 import time
 
+
 def divide_evenly(n):
     """
     Finds out if number n can be divided evenly
@@ -21,9 +22,10 @@ def divide_evenly(n):
         divide = True
     return divide
 
+
 def evenly_divide_from_1_to_20():
     """
-    Finds what is the smallest positive number that is evenly divisible by 
+    Finds what is the smallest positive number that is evenly divisible by
     all of the numbers from 1 to 20
     """
     nr = 2
@@ -37,10 +39,16 @@ def evenly_divide_from_1_to_20():
                 nr += 10
     print (nr)
 
+
+def elapsed_time(elapsed):
+    """
+    Computes the amount of time the algorithm ran and outputs the time
+    """
+    min = int(elapsed / 60)  # minutes
+    s = int(elapsed) % 60  # seconds
+    ms = int(elapsed * 1000) - ((int(elapsed) % 60) * 1000)  # milliseconds
+    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
+
 start = time.time()
 evenly_divide_from_1_to_20()
-elapsed = (time.time() - start)
-print('time:', elapsed, 'seconds ~', \
-    int(elapsed/60), 'minutes,', \
-    int(elapsed)%60, 'seconds,', \
-    int(elapsed*1000)-((int(elapsed)%60)*1000), 'milliseconds')
+elapsed_time(time.time() - start)

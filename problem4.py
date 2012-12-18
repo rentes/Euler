@@ -9,12 +9,14 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 import math
 import time
 
+
 def number_of_digits(n):
     """
     Returns the number of digits an integer has
     Returns: int
     """
     return 1 + int(math.log10(n))
+
 
 def is_palindrome(n):
     """
@@ -47,9 +49,11 @@ def is_palindrome(n):
         else:
             return False
     elif nrDigits == 6:
-        if int(n / 100000) == ((((n % 100000) % 10000) % 1000) % 100) % 10 and \
-           int((n % 100000) / 10000) == int(((((n % 100000) % 10000) % 1000) % 100) / 10) and \
-           int(((n % 100000) % 10000) / 1000) == int((((n % 100000) % 10000) % 1000) / 100):
+        if int(n / 100000) == ((((n % 100000) % 10000) % 1000) % 100) % 10 \
+        and int((n % 100000) / 10000) == \
+        int(((((n % 100000) % 10000) % 1000) % 100) / 10) \
+        and int(((n % 100000) % 10000) / 1000) == \
+        int((((n % 100000) % 10000) % 1000) / 100):
             return True
         else:
             return False
@@ -57,27 +61,34 @@ def is_palindrome(n):
         print('Number of digits higher than 6. Pass.')
         return False
 
+
 def largest_palindrome():
     """
     Finds the largest palindrome made from the product of two 3-digit numbers
     """
-    number1, number2 = 1, 2 # numbers for product
-    largestPalindrome = 0 # to record last found largest palindrome
+    number1, number2 = 1, 2  # numbers for product
+    largestPalindrome = 0  # to record last found largest palindrome
     while number1 < 1000:
         while number2 < 1000:
             product = number1 * number2
             if is_palindrome(product):
                 if product > largestPalindrome:
-                    largestPalindrome = product # update largest palindrome
+                    largestPalindrome = product  # update largest palindrome
             number2 += 1
-        number2 = 2 # reset number2
+        number2 = 2  # reset number2
         number1 += 1
-    print('largest palindrome is', largestPalindrome)    
+    print('largest palindrome is', largestPalindrome)
+
+
+def elapsed_time(elapsed):
+    """
+    Computes the amount of time the algorithm ran and outputs the time
+    """
+    min = int(elapsed / 60)  # minutes
+    s = int(elapsed) % 60  # seconds
+    ms = int(elapsed * 1000) - ((int(elapsed) % 60) * 1000)  # milliseconds
+    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
 
 start = time.time()
 largest_palindrome()
-elapsed = (time.time() - start)
-print('time:', elapsed, 'seconds ~', \
-    int(elapsed/60), 'minutes,', \
-    int(elapsed)%60, 'seconds,', \
-    int(elapsed*1000)-((int(elapsed)%60)*1000), 'milliseconds')
+elapsed_time(time.time() - start)

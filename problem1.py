@@ -27,7 +27,6 @@ def elapsed_time(elapsed):
     min = int(elapsed / 60)  # minutes
     s = int(elapsed) % 60  # seconds
     ms = int(elapsed * 1000) - ((int(elapsed) % 60) * 1000)  # milliseconds
-
     print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
 
 start = time.time()

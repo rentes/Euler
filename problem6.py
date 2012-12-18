@@ -13,9 +13,10 @@ natural numbers and the square of the sum.
 
 import time
 
+
 def sum_square_less_square_sum():
     """
-    Finds the difference between the sum of the squares of the first one 
+    Finds the difference between the sum of the squares of the first one
     hundred natural numbers and the square of the sum.
     """
     sumSquare = 0
@@ -26,14 +27,20 @@ def sum_square_less_square_sum():
         sumSquare += i ** 2
 
     # square of the sum
-    squareSum = ((100 * 101)/2) ** 2
-    
+    squareSum = ((100 * 101) / 2) ** 2
+
     print(int(squareSum - sumSquare))
+
+
+def elapsed_time(elapsed):
+    """
+    Computes the amount of time the algorithm ran and outputs the time
+    """
+    min = int(elapsed / 60)  # minutes
+    s = int(elapsed) % 60  # seconds
+    ms = int(elapsed * 1000) - ((int(elapsed) % 60) * 1000)  # milliseconds
+    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
 
 start = time.time()
 sum_square_less_square_sum()
-elapsed = (time.time() - start)
-print('time:', elapsed, 'seconds ~', \
-    int(elapsed/60), 'minutes,', \
-    int(elapsed)%60, 'seconds,', \
-    int(elapsed*1000)-((int(elapsed)%60)*1000), 'milliseconds')
+elapsed_time(time.time() - start)
