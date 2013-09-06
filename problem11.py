@@ -112,13 +112,13 @@ start = time.time()
 matrix = fill_matrix()
 # compute the largest value from the matrix on a horizontal traversal
 value_horizontally = largest_product_horizontally(matrix)
-print("horizontally: "+str(value_horizontally))
+print("horizontally: " + str(value_horizontally))
 # compute the largest value from the matrix on a vertical traversal
 value_vertically = largest_product_vertically(matrix)
-print("vertically: "+str(value_vertically))
+print("vertically: " + str(value_vertically))
 # compute the largest value from the matrix on a diagonal traversal
 value_diagonally = largest_product_diagonally(matrix)
-print("diagonally: "+str(value_diagonally))
+print("diagonally: " + str(value_diagonally))
 # print the largest product found
 print("largest product found is: " +
       str(max(value_horizontally, value_vertically, value_diagonally)))
