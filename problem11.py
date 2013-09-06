@@ -88,11 +88,11 @@ def largest_product_diagonally(matrix):
                 pass
             max_product = max(product_NW, product_NE, product_SE, product_SW)
             if max_product > largest_product:
-                largest_product = max_product
-            product_NW = 1
-            product_NE = 1
-            product_SE = 1
-            product_SW = 1
+                largest_product = max_product  # update the largest value found
+            product_NW = 1  # reset product for NW diagonal
+            product_NE = 1  # reset product for NE diagonal
+            product_SE = 1  # reset product for SE diagonal
+            product_SW = 1  # reset product for SW diagonal
     return largest_product
 
 
@@ -106,12 +106,21 @@ def elapsed_time(elapsed):
     print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
 
 
+# start the timing for this problem
 start = time.time()
+# create a matrix from the problem data
 matrix = fill_matrix()
-value = largest_product_horizontally(matrix)
-print("horizontally: "+str(value))
-value = largest_product_vertically(matrix)
-print("vertically: "+str(value))
-value = largest_product_diagonally(matrix)
-print("diagonally: "+str(value))
+# compute the largest value from the matrix on a horizontal traversal
+value_horizontally = largest_product_horizontally(matrix)
+print("horizontally: "+str(value_horizontally))
+# compute the largest value from the matrix on a vertical traversal
+value_vertically = largest_product_vertically(matrix)
+print("vertically: "+str(value_vertically))
+# compute the largest value from the matrix on a diagonal traversal
+value_diagonally = largest_product_diagonally(matrix)
+print("diagonally: "+str(value_diagonally))
+# print the largest product found
+print("largest product found is: " +
+      str(max(value_horizontally, value_vertically, value_diagonally)))
+# compute the total time taken for this problem and show it to the user
 elapsed_time(time.time() - start)
