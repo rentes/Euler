@@ -30,7 +30,7 @@ def largest_product_horizontally(matrix):
     product = 1
     largest_product = 1
     for line in range(0, matrix.shape[0]):  # for each line
-        for column in range(0, matrix.shape[0]-3):  # for each column
+        for column in range(0, matrix.shape[1]-3):  # for each column
             product = int(matrix[line, column] *
                           matrix[line, column+1] *
                           matrix[line, column+2] *
@@ -62,7 +62,7 @@ def largest_product_diagonally(matrix):
     max_product = 1
     largest_product = 1
     for line in range(0, matrix.shape[0]):  # for each line
-        for column in range(0, matrix.shape[0]):  # for each column
+        for column in range(0, matrix.shape[1]):  # for each column
             try:
                 # NW
                 product_NW = int(matrix[line, column] *
