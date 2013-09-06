@@ -46,7 +46,7 @@ def largest_product_vertically(matrix):
     Computes the largest product vertically (column by column)
     on a given matrix
     """
-    matrix_vert = np.rot90(matrix)
+    matrix_vert = np.rot90(matrix)  # rotating the matrix
     return largest_product_horizontally(matrix_vert)
 
 
