@@ -35,10 +35,11 @@ start = time.time()
 triangular_number = 1
 n = 1
 
-while (number_of_factors(int(triangular_number))) != 500:
-    triangular_number = (n * (n + 1)) / 2
+while (number_of_factors(triangular_number)) != 500:
+    triangular_number = int((n * (n + 1)) / 2)
     n += 1
 
 # compute the total time taken for this problem and show it to the user
 elapsed_time(time.time() - start)
-print(int(triangular_number))
+# present the first triangular number to have 500 factors
+print(triangular_number)
