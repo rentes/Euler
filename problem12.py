@@ -3,7 +3,8 @@ Project Euler - Problem 12
 http://projecteuler.net/problem=12
 """
 
-import time, tools.timeutils as timeutils
+import time
+import tools.timeutils as timeutils
 
 
 def number_of_factors(n):
@@ -23,7 +24,7 @@ start = time.time()
 triangular_number = 1
 n = 1
 
-while (number_of_factors(triangular_number)) != 100:
+while (number_of_factors(triangular_number)) != 500:
     triangular_number = int((n * (n + 1)) / 2)
     n += 1
 
