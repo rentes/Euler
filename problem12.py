@@ -35,10 +35,7 @@ start = time.time()
 triangular_number = 1
 n = 1
 
-# only calculating the factors of even triangular numbers
-# because even numbers have higher number of factors than odd numbers
-while ((triangular_number % 2 == 0) and
-       number_of_factors(int(triangular_number))) != 500:
+while (number_of_factors(int(triangular_number))) != 500:
     triangular_number = (n * (n + 1)) / 2
     n += 1
 
