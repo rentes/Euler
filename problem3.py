@@ -1,11 +1,10 @@
 """
 Project Euler - Problem 3
 http://projecteuler.net/problem=3
-The prime factors of 13195 are 5, 7, 13 and 29.
-What is the largest prime factor of the number 600851475143 ?
 """
 
 import time
+import tools.timeutils as timeutils
 
 
 def multiply_factors(l):
@@ -55,15 +54,6 @@ def factors(n):
     return l
 
 
-def elapsed_time(elapsed):
-    """
-    Computes the amount of time spent by the algorithm and outputs the time
-    """
-    min = int(elapsed / 60)  # minutes
-    s = int(elapsed) % 60  # seconds
-    ms = int((elapsed - int(elapsed)) * 1000)  # milliseconds
-    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
-
 start = time.time()
 print(factors(600851475143)[-1])  # print the last value of the sorted list
-elapsed_time(time.time() - start)
+timeutils.elapsed_time(time.time() - start)

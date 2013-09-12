@@ -1,10 +1,10 @@
 """
 Project Euler - Problem 1
 http://projecteuler.net/problem=1
-Add all the natural numbers below one thousand that are multiples of 3 or 5.
 """
 
 import time
+import tools.timeutils as timeutils
 
 
 def sum_numbers():
@@ -20,15 +20,6 @@ def sum_numbers():
     return b
 
 
-def elapsed_time(elapsed):
-    """
-    Computes the amount of time spent by the algorithm and outputs the time
-    """
-    min = int(elapsed / 60)  # minutes
-    s = int(elapsed) % 60  # seconds
-    ms = int((elapsed - int(elapsed)) * 1000)  # milliseconds
-    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
-
 start = time.time()
 print(sum_numbers())
-elapsed_time(time.time() - start)
+timeutils.elapsed_time(time.time() - start)

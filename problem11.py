@@ -5,6 +5,7 @@ http://projecteuler.net/problem=11
 
 import time
 import numpy as np  # please install numpy module (python-numpy on Arch Linux)
+import tools.timeutils as timeutils
 
 
 def fill_matrix():
@@ -96,16 +97,6 @@ def largest_product_diagonally(matrix):
     return largest_product
 
 
-def elapsed_time(elapsed):
-    """
-    Computes the amount of time spent by the algorithm and outputs the time
-    """
-    min = int(elapsed / 60)  # minutes
-    s = int(elapsed) % 60  # seconds
-    ms = int((elapsed - int(elapsed)) * 1000)  # milliseconds
-    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
-
-
 # start the timing for this problem
 start = time.time()
 # create a matrix from the problem data
@@ -123,4 +114,4 @@ print("diagonally: " + str(value_diagonally))
 print("largest product found is: " +
       str(max(value_horizontally, value_vertically, value_diagonally)))
 # compute the total time taken for this problem and show it to the user
-elapsed_time(time.time() - start)
+timeutils.elapsed_time(time.time() - start)

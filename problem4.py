@@ -1,13 +1,11 @@
 """
 Project Euler - Problem 4
 http://projecteuler.net/problem=4
-A palindromic number reads the same both ways. The largest palindrome made
-from the product of two 2-digit numbers is 9009 = 91 x 99.
-Find the largest palindrome made from the product of two 3-digit numbers.
 """
 
 import math
 import time
+import tools.timeutils as timeutils
 
 
 def number_of_digits(n):
@@ -50,10 +48,10 @@ def is_palindrome(n):
             return False
     elif nrDigits == 6:
         if int(n / 100000) == ((((n % 100000) % 10000) % 1000) % 100) % 10 \
-        and int((n % 100000) / 10000) == \
-        int(((((n % 100000) % 10000) % 1000) % 100) / 10) \
-        and int(((n % 100000) % 10000) / 1000) == \
-        int((((n % 100000) % 10000) % 1000) / 100):
+           and int((n % 100000) / 10000) == \
+           int(((((n % 100000) % 10000) % 1000) % 100) / 10) \
+           and int(((n % 100000) % 10000) / 1000) == \
+           int((((n % 100000) % 10000) % 1000) / 100):
             return True
         else:
             return False
@@ -80,15 +78,6 @@ def largest_palindrome():
     print('largest palindrome is', largestPalindrome)
 
 
-def elapsed_time(elapsed):
-    """
-    Computes the amount of time spent by the algorithm and outputs the time
-    """
-    min = int(elapsed / 60)  # minutes
-    s = int(elapsed) % 60  # seconds
-    ms = int((elapsed - int(elapsed)) * 1000)  # milliseconds
-    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
-
 start = time.time()
 largest_palindrome()
-elapsed_time(time.time() - start)
+timeutils.elapsed_time(time.time() - start)

@@ -1,14 +1,10 @@
 """
 Project Euler - Problem 9
 http://projecteuler.net/problem=9
-A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
-a^2 + b^2 = c^2
-For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
-There exists exactly one Pythagorean triplet for which a + b + c = 1000.
-Find the product abc.
 """
 
 import time
+import tools.timeutils as timeutils
 
 
 def pythagorean_triplet():
@@ -34,15 +30,6 @@ def pythagorean_triplet():
         b = 1
 
 
-def elapsed_time(elapsed):
-    """
-    Computes the amount of time spent by the algorithm and outputs the time
-    """
-    min = int(elapsed / 60)  # minutes
-    s = int(elapsed) % 60  # seconds
-    ms = int((elapsed - int(elapsed)) * 1000)  # milliseconds
-    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
-
 start = time.time()
 pythagorean_triplet()
-elapsed_time(time.time() - start)
+timeutils.elapsed_time(time.time() - start)

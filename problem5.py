@@ -1,13 +1,10 @@
 """
 Project Euler - Problem 5
 http://projecteuler.net/problem=5
-2520 is the smallest number that can be divided by each of the numbers from
-1 to 10 without any remainder.
-What is the smallest positive number that is evenly divisible by all of the
-numbers from 1 to 20?
 """
 
 import time
+import tools.timeutils as timeutils
 
 
 def divide_evenly(n):
@@ -37,18 +34,9 @@ def evenly_divide_from_1_to_20():
                 nr += 8
             else:
                 nr += 10
-    print (nr)
+    print(nr)
 
-
-def elapsed_time(elapsed):
-    """
-    Computes the amount of time spent by the algorithm and outputs the time
-    """
-    min = int(elapsed / 60)  # minutes
-    s = int(elapsed) % 60  # seconds
-    ms = int((elapsed - int(elapsed)) * 1000)  # milliseconds
-    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
 
 start = time.time()
 evenly_divide_from_1_to_20()
-elapsed_time(time.time() - start)
+timeutils.elapsed_time(time.time() - start)

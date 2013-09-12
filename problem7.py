@@ -1,11 +1,10 @@
 """
 Project Euler - Problem 7
 http://projecteuler.net/problem=7
-By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that
-the 6th prime is 13. What is the 10 001st prime number?
 """
 
 import time
+import tools.timeutils as timeutils
 
 
 def is_prime(n):
@@ -40,15 +39,6 @@ def ten_thousand_first_prime():
     print(largest)
 
 
-def elapsed_time(elapsed):
-    """
-    Computes the amount of time spent by the algorithm and outputs the time
-    """
-    min = int(elapsed / 60)  # minutes
-    s = int(elapsed) % 60  # seconds
-    ms = int((elapsed - int(elapsed)) * 1000)  # milliseconds
-    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
-
 start = time.time()
 ten_thousand_first_prime()
-elapsed_time(time.time() - start)
+timeutils.elapsed_time(time.time() - start)

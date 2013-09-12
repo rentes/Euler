@@ -1,17 +1,10 @@
 """
 Project Euler - Problem 6
 http://projecteuler.net/problem=6
-The sum of the squares of the first ten natural numbers is,
-1^2 + 2^2 + ... + 10^2 = 385
-The square of the sum of the first ten natural numbers is,
-(1 + 2 + ... + 10)^2 = 55^2 = 3025
-Hence the difference between the sum of the squares of the first ten natural
-numbers and the square of the sum is 3025 - 385 = 2640.
-Find the difference between the sum of the squares of the first one hundred
-natural numbers and the square of the sum.
 """
 
 import time
+import tools.timeutils as timeutils
 
 
 def sum_square_less_square_sum():
@@ -32,15 +25,6 @@ def sum_square_less_square_sum():
     print(int(squareSum - sumSquare))
 
 
-def elapsed_time(elapsed):
-    """
-    Computes the amount of time spent by the algorithm and outputs the time
-    """
-    min = int(elapsed / 60)  # minutes
-    s = int(elapsed) % 60  # seconds
-    ms = int((elapsed - int(elapsed)) * 1000)  # milliseconds
-    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
-
 start = time.time()
 sum_square_less_square_sum()
-elapsed_time(time.time() - start)
+timeutils.elapsed_time(time.time() - start)

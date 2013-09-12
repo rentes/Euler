@@ -1,11 +1,10 @@
 """
 Project Euler - Problem 10
 http://projecteuler.net/problem=10
-The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
-Find the sum of all the primes below two million.
 """
 
 import time
+import tools.timeutils as timeutils
 
 
 def sum_of_primes():
@@ -38,15 +37,6 @@ def is_prime(n):
     return True  # if we get here, than n is a prime
 
 
-def elapsed_time(elapsed):
-    """
-    Computes the amount of time spent by the algorithm and outputs the time
-    """
-    min = int(elapsed / 60)  # minutes
-    s = int(elapsed) % 60  # seconds
-    ms = int((elapsed - int(elapsed)) * 1000)  # milliseconds
-    print('time:', elapsed, 's ~', min, 'min,', s, 's,', ms, 'ms')
-
 start = time.time()
 sum_of_primes()
-elapsed_time(time.time() - start)
+timeutils.elapsed_time(time.time() - start)
