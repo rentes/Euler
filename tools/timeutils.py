@@ -1,6 +1,7 @@
 """
-Module for calculating and displaying the time an algorithm for
+Simple module for calculating and displaying the time an algorithm for
 a given Euler problem took to run
+Author: Miguel Rentes
 """
 
 import time
