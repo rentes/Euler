@@ -13,7 +13,7 @@ def number_of_factors(n):
     Note: not the actual factors, just how many there are
     """
     number_of_factors = 0
-    for x in range(1, n+1):
+    for x in range(1, n + 1):
         if n % x == 0:
             number_of_factors += 1
     return number_of_factors
