@@ -1,8 +1,5 @@
-"""
-Project Euler - Problem 4
-http://projecteuler.net/problem=4
-"""
-
+"""Project Euler - Problem 4 - http://projecteuler.net/problem=4"""
+import sys
 import math
 import time
 import tools.timeutils as timeutils
@@ -64,20 +61,30 @@ def largest_palindrome():
     """
     Finds the largest palindrome made from the product of two 3-digit numbers
     """
-    number1, number2 = 1, 2  # numbers for product
-    largestPalindrome = 0  # to record last found largest palindrome
+    # numbers for product
+    number1, number2 = 1, 2
+    # to record last found largest palindrome
+    largestPalindrome = 0
     while number1 < 1000:
         while number2 < 1000:
             product = number1 * number2
             if is_palindrome(product):
                 if product > largestPalindrome:
-                    largestPalindrome = product  # update largest palindrome
+                    # update largest palindrome
+                    largestPalindrome = product
             number2 += 1
-        number2 = 2  # reset number2
+        # reset number2
+        number2 = 2
         number1 += 1
     print('largest palindrome is', largestPalindrome)
 
 
-start = time.time()
-largest_palindrome()
-timeutils.elapsed_time(time.time() - start)
+def main():
+    """Main entry point for the script"""
+    start = time.time()
+    largest_palindrome()
+    timeutils.elapsed_time(time.time() - start)
+
+
+if __name__ == '__main__':
+    sys.exit(main())

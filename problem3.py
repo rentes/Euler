@@ -1,8 +1,5 @@
-"""
-Project Euler - Problem 3
-http://projecteuler.net/problem=3
-"""
-
+"""Project Euler - Problem 3 - http://projecteuler.net/problem=3"""
+import sys
 import time
 import tools.timeutils as timeutils
 
@@ -26,8 +23,10 @@ def factors(n):
     3 - if they equal n, we found all factors and only need to obtain the max
     4 - if not equal to n, continue search for factors until reaching n
     """
-    l = []  # list with prime factors of number n
-    m = 2  # first number to divide n
+    # list with prime factors of number n
+    l = []
+    # first number to divide n
+    m = 2
     # while all factors multiplied don't equal n and m is not n yet
     while n != multiply_factors(l) and m < n:
         if n % m == 0:
@@ -54,6 +53,12 @@ def factors(n):
     return l
 
 
-start = time.time()
-print(factors(600851475143)[-1])  # print the last value of the sorted list
-timeutils.elapsed_time(time.time() - start)
+def main():
+    """Main entry point for the script"""
+    start = time.time()
+    # print the last value of the sorted list
+    print(factors(600851475143)[-1])
+    timeutils.elapsed_time(time.time() - start)
+
+if __name__ == '__main__':
+    sys.exit(main())
