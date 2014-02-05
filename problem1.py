@@ -1,8 +1,5 @@
-"""
-Project Euler - Problem 1
-http://projecteuler.net/problem=1
-"""
-
+"""Project Euler - Problem 1 - http://projecteuler.net/problem=1"""
+import sys
 import time
 import tools.timeutils as timeutils
 
@@ -14,12 +11,18 @@ def sum_numbers():
     """
     a, b = 1, 0
     while a < 1000:
-        if ((a % 3 == 0) or (a % 5 == 0)):  # if a is multiple or 3 or 5
-            b += a  # add a to the sum
-        a += 1  # let us check next integer
+        if ((a % 3 == 0) or (a % 5 == 0)):
+            b += a
+        a += 1
     return b
 
 
-start = time.time()
-print(sum_numbers())
-timeutils.elapsed_time(time.time() - start)
+def main():
+    """Main entry point for the script"""
+    start = time.time()
+    print(sum_numbers())
+    timeutils.elapsed_time(time.time() - start)
+
+
+if __name__ == '__main__':
+    sys.exit(main())

@@ -1,8 +1,5 @@
-"""
-Project Euler - Problem 2
-http://projecteuler.net/problem=2
-"""
-
+"""Project Euler - Problem 2 - http://projecteuler.net/problem=2"""
+import sys
 import time
 import tools.timeutils as timeutils
 
@@ -10,10 +7,10 @@ import tools.timeutils as timeutils
 def fib(n):
     """
     Fibonacci nth number definition based on Dijsktra's paper here:
-    www.cs.utexas.edu/users/EWD/ewd06xx/EWD654.PDF
-    (I love it)
+    www.cs.utexas.edu/users/EWD/ewd06xx/EWD654.pdf
     """
-    fibs = {0: 0, 1: 1}  # fibonacci dictionary used for memoization
+    # fibonacci dictionary used for memoization
+    fibs = {0: 0, 1: 1}
 
     if n in fibs:
         return fibs[n]
@@ -29,16 +26,22 @@ def sum_fibonacci():
     """
     Find the sum of the even-valued terms of the Fibonacci sequence
     """
-    count = 0  # counter that will hold the sum
-    n = 1  # counter for iterations
+    sum = 0
+    n = 1
 
-    while count < 4000000:
-        if fib(n) % 2 == 0:  # we only want even fibonacci numbers
-            count = count + fib(n)
+    while sum < 4000000:
+        if fib(n) % 2 == 0:
+            sum = sum + fib(n)
         n += 1
-    print(count)
+    print(sum)
 
 
-start = time.time()
-sum_fibonacci()
-timeutils.elapsed_time(time.time() - start)
+def main():
+    """Main entry point for the script"""
+    start = time.time()
+    sum_fibonacci()
+    timeutils.elapsed_time(time.time() - start)
+
+
+if __name__ == '__main__':
+    sys.exit(main())
