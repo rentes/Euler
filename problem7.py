@@ -1,8 +1,5 @@
-"""
-Project Euler - Problem 7
-http://projecteuler.net/problem=7
-"""
-
+"""Project Euler - Problem 7 - http://projecteuler.net/problem=7"""
+import sys
 import time
 import tools.timeutils as timeutils
 
@@ -39,6 +36,11 @@ def ten_thousand_first_prime():
     print(largest)
 
 
-start = time.time()
-ten_thousand_first_prime()
-timeutils.elapsed_time(time.time() - start)
+def main():
+    """Main entry point for script"""
+    start = time.time()
+    ten_thousand_first_prime()
+    timeutils.elapsed_time(time.time() - start)
+
+if __name__ == '__main__':
+    sys.exit(main())

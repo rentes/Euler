@@ -1,8 +1,5 @@
-"""
-Project Euler - Problem 6
-http://projecteuler.net/problem=6
-"""
-
+"""Project Euler - Problem 6 - http://projecteuler.net/problem=6"""
+import sys
 import time
 import tools.timeutils as timeutils
 
@@ -25,6 +22,11 @@ def sum_square_less_square_sum():
     print(int(squareSum - sumSquare))
 
 
-start = time.time()
-sum_square_less_square_sum()
-timeutils.elapsed_time(time.time() - start)
+def main():
+    """Main entry point for the script"""
+    start = time.time()
+    sum_square_less_square_sum()
+    timeutils.elapsed_time(time.time() - start)
+
+if __name__ == '__main__':
+    sys.exit(main())

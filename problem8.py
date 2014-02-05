@@ -1,8 +1,5 @@
-"""
-Project Euler - Problem 8
-http://projecteuler.net/problem=8
-"""
-
+"""Project Euler - Problem 8 - http://projecteuler.net/problem=8"""
+import sys
 import time
 import tools.timeutils as timeutils
 
@@ -57,6 +54,12 @@ def greatest_product(x):
     print('largest is', largest)
 
 
-start = time.time()
-greatest_product(x)
-timeutils.elapsed_time(time.time() - start)
+def main():
+    """Main entry point for the script"""
+    start = time.time()
+    greatest_product(x)
+    timeutils.elapsed_time(time.time() - start)
+
+
+if __name__ == '__main__':
+    sys.exit(main())

@@ -1,8 +1,5 @@
-"""
-Project Euler - Problem 5
-http://projecteuler.net/problem=5
-"""
-
+"""Project Euler - Problem 5 - http://projecteuler.net/problem=5"""
+import sys
 import time
 import tools.timeutils as timeutils
 
@@ -37,6 +34,11 @@ def evenly_divide_from_1_to_20():
     print(nr)
 
 
-start = time.time()
-evenly_divide_from_1_to_20()
-timeutils.elapsed_time(time.time() - start)
+def main():
+    """Main entry point for the script"""
+    start = time.time()
+    evenly_divide_from_1_to_20()
+    timeutils.elapsed_time(time.time() - start)
+
+if __name__ == '__main__':
+    sys.exit(main())
