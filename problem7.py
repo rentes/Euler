@@ -23,7 +23,7 @@ def is_prime(n):
         if n % x == 0:
             # n is disible by x, so n is not a prime
             return False
-    # if we get here, than n is a prime
+    # if we get here, then n is a prime
     return True
 
 
