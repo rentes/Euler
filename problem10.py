@@ -1,8 +1,5 @@
-"""
-Project Euler - Problem 10
-http://projecteuler.net/problem=10
-"""
-
+"""Project Euler - Problem 10 - http://projecteuler.net/problem=10"""
+import sys
 import time
 import tools.timeutils as timeutils
 
@@ -27,16 +24,28 @@ def is_prime(n):
     """
     if n < 2:
         return False
-    if n == 2:  # the first prime number
+    # the first prime number
+    if n == 2:
         return True
-    if n % 2 == 0:  # all even numbers, except 2, are not prime numbers
+    # all even numbers, except 2, are not prime numbers
+    if n % 2 == 0:
         return False
-    for x in range(3, int(n ** 0.5) + 1, 2):  # primality test
-        if n % x == 0:  # dividing n for all numbers in range [3, sqrt(n) + 1]
-            return False  # n is disible by x, so n is not a prime
-    return True  # if we get here, than n is a prime
+    # primality test
+    for x in range(3, int(n ** 0.5) + 1, 2):
+        # dividing n for all numbers in range [3, sqrt(n) + 1]
+        if n % x == 0:
+            # n is disible by x, so n is not a prime
+            return False
+    # if we get here, then n is a prime
+    return True
 
 
-start = time.time()
-sum_of_primes()
-timeutils.elapsed_time(time.time() - start)
+def main():
+    """Main entry point for the script"""
+    start = time.time()
+    sum_of_primes()
+    timeutils.elapsed_time(time.time() - start)
+
+
+if __name__ == '__main__':
+    sys.exit(main())

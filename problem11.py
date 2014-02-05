@@ -1,10 +1,8 @@
-"""
-Project Euler - Problem 11
-http://projecteuler.net/problem=11
-"""
-
+"""Project Euler - Problem 11 - http://projecteuler.net/problem=11"""
+import sys
 import time
-import numpy as np  # please install numpy module (python-numpy on Arch Linux)
+# please install numpy module (python-numpy on Arch Linux)
+import numpy as np
 import tools.timeutils as timeutils
 
 
@@ -30,8 +28,8 @@ def largest_product_horizontally(matrix):
     """
     product = 1
     largest_product = 1
-    for line in range(0, matrix.shape[0]):  # for each line
-        for column in range(0, matrix.shape[1]-3):  # for each column
+    for line in range(0, matrix.shape[0]):
+        for column in range(0, matrix.shape[1]-3):
             product = int(matrix[line, column] *
                           matrix[line, column+1] *
                           matrix[line, column+2] *
@@ -47,7 +45,8 @@ def largest_product_vertically(matrix):
     Computes the largest product vertically (column by column)
     on a given matrix
     """
-    matrix_vert = np.rot90(matrix)  # rotating the matrix
+    # rotating the matrix
+    matrix_vert = np.rot90(matrix)
     return largest_product_horizontally(matrix_vert)
 
 
@@ -62,8 +61,8 @@ def largest_product_diagonally(matrix):
     product_SW = 1
     max_product = 1
     largest_product = 1
-    for line in range(0, matrix.shape[0]):  # for each line
-        for column in range(0, matrix.shape[1]):  # for each column
+    for line in range(0, matrix.shape[0]):
+        for column in range(0, matrix.shape[1]):
             try:
                 # NW
                 product_NW = int(matrix[line, column] *
@@ -89,29 +88,33 @@ def largest_product_diagonally(matrix):
                 pass
             max_product = max(product_NW, product_NE, product_SE, product_SW)
             if max_product > largest_product:
-                largest_product = max_product  # update the largest value found
-            product_NW = 1  # reset product for NW diagonal
-            product_NE = 1  # reset product for NE diagonal
-            product_SE = 1  # reset product for SE diagonal
-            product_SW = 1  # reset product for SW diagonal
+                # update the largest value found
+                largest_product = max_product
+            # resetting products for the 4 diagonals
+            product_NW = 1
+            product_NE = 1
+            product_SE = 1
+            product_SW = 1
     return largest_product
 
 
-# start the timing for this problem
-start = time.time()
-# create a matrix from the problem data
-matrix = fill_matrix()
-# compute the largest value from the matrix on a horizontal traversal
-value_horizontally = largest_product_horizontally(matrix)
-print("horizontally: " + str(value_horizontally))
-# compute the largest value from the matrix on a vertical traversal
-value_vertically = largest_product_vertically(matrix)
-print("vertically: " + str(value_vertically))
-# compute the largest value from the matrix on a diagonal traversal
-value_diagonally = largest_product_diagonally(matrix)
-print("diagonally: " + str(value_diagonally))
-# print the largest product found
-print("largest product found is: " +
-      str(max(value_horizontally, value_vertically, value_diagonally)))
-# compute the total time taken for this problem and show it to the user
-timeutils.elapsed_time(time.time() - start)
+def main():
+    """Main entry point for the script"""
+    start = time.time()
+    # create a matrix from the problem data
+    matrix = fill_matrix()
+    # compute the largest value from the matrix on a horizontal traversal
+    value_horizontally = largest_product_horizontally(matrix)
+    print("horizontally: " + str(value_horizontally))
+    # compute the largest value from the matrix on a vertical traversal
+    value_vertically = largest_product_vertically(matrix)
+    print("vertically: " + str(value_vertically))
+    # compute the largest value from the matrix on a diagonal traversal
+    value_diagonally = largest_product_diagonally(matrix)
+    print("diagonally: " + str(value_diagonally))
+    print("largest product found is: " +
+          str(max(value_horizontally, value_vertically, value_diagonally)))
+    timeutils.elapsed_time(time.time() - start)
+
+if __name__ == '__main__':
+    sys.exit(main())

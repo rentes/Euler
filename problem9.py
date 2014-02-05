@@ -1,8 +1,5 @@
-"""
-Project Euler - Problem 9
-http://projecteuler.net/problem=9
-"""
-
+"""Project Euler - Problem 9 - http://projecteuler.net/problem=9"""
+import sys
 import time
 import tools.timeutils as timeutils
 
@@ -30,6 +27,11 @@ def pythagorean_triplet():
         b = 1
 
 
-start = time.time()
-pythagorean_triplet()
-timeutils.elapsed_time(time.time() - start)
+def main():
+    """Main entry point for the script"""
+    start = time.time()
+    pythagorean_triplet()
+    timeutils.elapsed_time(time.time() - start)
+
+if __name__ == '__main__':
+    sys.exit(main())
