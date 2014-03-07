@@ -2,6 +2,7 @@
 import sys
 import time
 import tools.timeutils as timeUtils
+import math
 
 
 def number_of_factors(n):
@@ -13,6 +14,7 @@ def number_of_factors(n):
     for x in range(1, n + 1):
         if n % x == 0:
             factors += 1
+    print ("nr: ", n, "# of factors: ", factors)
     return factors
 
 
@@ -20,10 +22,10 @@ def main():
     """Main entry point for the script"""
     start = time.time()
     triangular_number = 1
-    n = 1
+    n = 2
 
-    while (number_of_factors(triangular_number)) != 500:
-        triangular_number = int((n * (n + 1)) / 2)
+    while number_of_factors(triangular_number) != 500:
+        triangular_number += n
         n += 1
 
     timeUtils.elapsed_time(time.time() - start)
