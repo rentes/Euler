@@ -2,7 +2,6 @@
 import sys
 import time
 import tools.timeutils as timeUtils
-import math
 
 
 def number_of_factors(n):
