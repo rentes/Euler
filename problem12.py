@@ -10,10 +10,22 @@ def number_of_factors(n):
     Note: not the actual factors, just how many there are
     """
     factors = 0
-    for x in range(1, n + 1):
-        if n % x == 0:
-            factors += 1
-    return factors
+    factor_found = 0
+    max_limit = 0
+    list = []
+    list.append(1)
+
+    for m in range(2, n):
+        if n % m == 0:
+            factor_found = int(n / m)
+            if max_limit < factor_found:
+                max_limit = factor_found
+            if m > max_limit:
+                break
+            list.append(factor_found)
+
+    list.append(n)
+    return len(list)
 
 
 def main():
@@ -22,7 +34,9 @@ def main():
     triangular_number = 1
     n = 2
 
-    while number_of_factors(triangular_number) != 500:
+    #number_of_factors(28)
+
+    while number_of_factors(triangular_number) <= 500:
         triangular_number += n
         n += 1
 
