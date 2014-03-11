@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rentes/Euler.png?branch=master)](https://travis-ci.org/rentes/Euler) 
+
 # Euler
 
 This is my set of solutions for [Project Euler](http://projecteuler.net/ "Project Euler") problems.
