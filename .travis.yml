@@ -4,6 +4,5 @@ python:
 
 install:
  - "pip install nose"
- - "pip install ."
 
 script: nosetests -v
