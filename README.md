@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/rentes/Euler.png?branch=master)](https://travis-ci.org/rentes/Euler) 
+[![Build Status](https://travis-ci.org/rentes/Euler.png?branch=master)](https://travis-ci.org/rentes/Euler) [![License](https://go-shields.herokuapp.com/license-MIT-blue.png)](http://opensource.org/licenses/MIT) 
 
 # Euler
 
