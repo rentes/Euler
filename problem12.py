@@ -20,10 +20,9 @@ def number_of_factors(n):
             factor_found = int(n / m)
             if max_limit < factor_found:
                 max_limit = factor_found
-            if m > max_limit:
-                break
             list.append(factor_found)
-
+        if m > max_limit:
+            break
     list.append(n)
     return len(list)
 
@@ -33,8 +32,6 @@ def main():
     start = time.time()
     triangular_number = 1
     n = 2
-
-    #number_of_factors(28)
 
     while number_of_factors(triangular_number) <= 500:
         triangular_number += n
