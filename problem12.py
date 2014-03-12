@@ -44,6 +44,7 @@ def main():
 
 def test_number_of_factors():
     """Testing the number of factors method"""
+    assert number_of_factors(28) == 6
     assert number_of_factors(76576500) > 500
 
 
