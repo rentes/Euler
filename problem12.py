@@ -3,6 +3,7 @@ import sys
 import time
 import tools.timeutils as timeUtils
 
+solution = 0
 
 def number_of_factors(n):
     """
@@ -39,6 +40,11 @@ def main():
 
     timeUtils.elapsed_time(time.time() - start)
     print(triangular_number)
+
+
+def test_number_of_factors():
+    """Testing the number of factors method"""
+    assert number_of_factors(76576500) > 500
 
 
 if __name__ == '__main__':
