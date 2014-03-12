@@ -3,7 +3,6 @@ import sys
 import time
 import tools.timeutils as timeUtils
 
-solution = 0
 
 def number_of_factors(n):
     """
