@@ -10,15 +10,14 @@ def number_of_factors(n):
 
     Using a list to keep the factors found of number n
     """
-    factor_found = 0
+    quotient = 0
     max_limit = 0
-    list = []
-    list.append(1)  # 1 is always a factor
+    nr_factors = 2  # 1 and n are always factors
 
     for m in range(2, n):
         if n % m == 0:
             # found a new factor
-            factor_found = int(n / m)
+            nr_factors += 1
             # I only have to divide n by m until m reaches the result of
             # the quotient of the first factor encountered
             # for example: consider number 28. the first factor is 2 and
@@ -27,13 +26,12 @@ def number_of_factors(n):
             # any m > 14 will not be a factor of 28, and we break the cycle
             # when this condition occurs. This way we only have to make less
             # divisions to find out all the factors of number n
-            if max_limit < factor_found:
-                max_limit = factor_found
-            list.append(factor_found)
+            quotient = int(n / m)
+            if max_limit < quotient:
+                max_limit = quotient
         if m > max_limit:
             break
-    list.append(n)  # number n is also always a factor
-    return len(list)
+    return nr_factors
 
 
 def main():
@@ -51,7 +49,7 @@ def main():
 
 
 def test_number_of_factors():
-    """Testing the number of factors method on problem12.py"""
+    """Testing the number of factors method [problem 12]"""
     assert number_of_factors(28) == 6
     assert number_of_factors(76576500) > 500
 
