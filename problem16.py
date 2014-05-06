@@ -13,7 +13,7 @@ def main():
     # str(number) - converts number to string
     # map(int,string) - converts each charater to int
     # sum(list) - sums the list of ints (in this case)
-    print(sum(map(int,str(int(math.pow(2, 1000))))))
+    print(sum(map(int, str(int(math.pow(2, 1000))))))
 
     timeUtils.elapsed_time(time.time() - start)
 
