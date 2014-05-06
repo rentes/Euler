@@ -1,4 +1,4 @@
-"""Project Euler - Problem 13 - http://projecteuler.net/problem=13"""
+"""Project Euler - Problem 14 - http://projecteuler.net/problem=14"""
 import sys
 import time
 import tools.timeutils as timeUtils
@@ -23,10 +23,12 @@ def collatz_sequence(n):
 def main():
     """Main entry point for the script"""
     start = time.time()
+
     longest_length = 0
     collatz_sequence_length = 0
     longest_number = 0
     number = 1000000
+
     while number > 1:
         collatz_sequence_length = len(collatz_sequence(number))
         if collatz_sequence_length > longest_length:
@@ -34,6 +36,7 @@ def main():
             longest_number = number
         number -= 1
     print(longest_number)
+
     timeUtils.elapsed_time(time.time() - start)
 
 if __name__ == '__main__':
