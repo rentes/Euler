@@ -1,7 +1,7 @@
 """Project Euler - Problem 18 - http://projecteuler.net/problem=18"""
 import sys
 import time
-from tools import timeutils
+import tools.timeutils as timeutils
 
 
 def main():
