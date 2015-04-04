@@ -1,3 +1,9 @@
 *.pyc
 __pycache__
+<<<<<<< Updated upstream
 /.idea
+=======
+
+## PyCharm
+/.idea
+>>>>>>> Stashed changes

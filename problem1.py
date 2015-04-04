@@ -1,7 +1,7 @@
 """Project Euler - Problem 1 - http://projecteuler.net/problem=1"""
 import sys
 import time
-import tools.timeutils as timeutils
+import tools.timeutils as timeUtils
 
 
 def sum_numbers():
@@ -21,7 +21,7 @@ def main():
     """Main entry point for the script"""
     start = time.time()
     print(sum_numbers())
-    timeutils.elapsed_time(time.time() - start)
+    timeUtils.elapsed_time(time.time() - start)
 
 
 if __name__ == '__main__':
