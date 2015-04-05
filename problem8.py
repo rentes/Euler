@@ -4,7 +4,8 @@ import time
 import tools.timeutils as timeutils
 
 
-x = int('73167176531330624919225119674426574742355349194934' +
+a_thousand_digit_number = \
+    int('73167176531330624919225119674426574742355349194934' +
         '96983520312774506326239578318016984801869478851843' +
         '85861560789112949495459501737958331952853208805511' +
         '12540698747158523863050715693290963295227443043557' +
@@ -39,25 +40,23 @@ def compute_product(n):
     return a
 
 
-def greatest_product(x):
+def greatest_product(number):
     """
     Finds the greatest product of 5 consecutive digits in the 1000-digit number
     """
     largest = 1
-    product = 1
     for n in range(1, 997, 1):
-        product = compute_product(x % (10 ** 5))
+        product = compute_product(number % (10 ** 5))
         if product > largest:
             largest = product
-        product = 1
-        x //= 10
+        number //= 10
     print('largest is', largest)
 
 
 def main():
     """Main entry point for the script"""
     start = time.time()
-    greatest_product(x)
+    greatest_product(a_thousand_digit_number)
     timeutils.elapsed_time(time.time() - start)
 
 

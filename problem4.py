@@ -2,7 +2,7 @@
 import sys
 import math
 import time
-import tools.timeutils as timeUtils
+import tools.timeutils as timeutils
 
 
 def number_of_digits(n):
@@ -14,7 +14,7 @@ def number_of_digits(n):
 
 
 def is_palindrome(n):
-    otherwise_ = """
+    """
     Finds if a given n is a palindrome
     Returns: bool (True if a palindrome, False otherwise)
     """
@@ -63,15 +63,15 @@ def largest_palindrome():
     """
     # numbers for product
     number1, number2 = 1, 2
-    # to record last found largest palindrome
-    largest_palindrome = 0
+    # to record largest palindrome found
+    _largest_palindrome = 0
     while number1 < 1000:
         while number2 < 1000:
             product = number1 * number2
             if is_palindrome(product):
-                if product > largest_palindrome:
+                if product > _largest_palindrome:
                     # update largest palindrome
-                    largest_palindrome = product
+                    _largest_palindrome = product
             number2 += 1
         # reset number2
         number2 = 2
@@ -83,7 +83,7 @@ def main():
     """Main entry point for the script"""
     start = time.time()
     largest_palindrome()
-    timeUtils.elapsed_time(time.time() - start)
+    timeutils.elapsed_time(time.time() - start)
 
 
 if __name__ == '__main__':

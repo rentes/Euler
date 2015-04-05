@@ -1,7 +1,7 @@
 """Project Euler - Problem 17 - http://projecteuler.net/problem=17"""
 import sys
 import time
-import tools.timeutils as timeUtils
+import tools.timeutils as timeutils
 
 string = ""
 
@@ -124,7 +124,7 @@ def main():
     # spaces don't count
     print(len(string.replace(" ", "")))
 
-    timeUtils.elapsed_time(time.time() - start)
+    timeutils.elapsed_time(time.time() - start)
 
 if __name__ == '__main__':
     sys.exit(main())

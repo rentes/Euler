@@ -8,13 +8,13 @@ def sum_of_primes():
     """
     Finds the sum of all the primes below two million
     """
-    n, sum, limit = 2, 0, 2000000
+    n, prime_sum, limit = 2, 0, 2000000
     while limit > 0:
         if is_prime(n):
-            sum += n
+            prime_sum += n
         n += 1
         limit -= 1
-    print(sum)
+    print(prime_sum)
 
 
 def is_prime(n):

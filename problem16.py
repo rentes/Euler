@@ -2,7 +2,7 @@
 import sys
 import time
 import math
-import tools.timeutils as timeUtils
+import tools.timeutils as timeutils
 
 
 def main():
@@ -15,7 +15,7 @@ def main():
     # sum(list) - sums the list of ints (in this case)
     print(sum(map(int, str(int(math.pow(2, 1000))))))
 
-    timeUtils.elapsed_time(time.time() - start)
+    timeutils.elapsed_time(time.time() - start)
 
 if __name__ == '__main__':
     sys.exit(main())

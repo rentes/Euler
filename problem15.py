@@ -2,7 +2,7 @@
 import sys
 import time
 import math
-import tools.timeutils as timeUtils
+import tools.timeutils as timeutils
 
 
 def combinations_n_k(n, k):
@@ -18,7 +18,7 @@ def main():
     # for an explanation on the relation of lattice paths with Pascal numbers
     print(combinations_n_k(40, 20))
 
-    timeUtils.elapsed_time(time.time() - start)
+    timeutils.elapsed_time(time.time() - start)
 
 if __name__ == '__main__':
     sys.exit(main())

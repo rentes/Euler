@@ -1,23 +1,22 @@
 """Project Euler - Problem 14 - http://projecteuler.net/problem=14"""
 import sys
 import time
-import tools.timeutils as timeUtils
+import tools.timeutils as timeutils
 
 
 def collatz_sequence(n):
     """
     Returns a list with the Collatz sequence given n
     """
-    collatz_sequence = []
-    collatz_sequence.append(n)
-    while (n > 1):
+    collatz_sequence_list = [n]
+    while n > 1:
         if n % 2 == 0:
             n = int(n / 2)
-            collatz_sequence.append(n)
+            collatz_sequence_list.append(n)
         else:
             n = int(3 * n + 1)
-            collatz_sequence.append(n)
-    return collatz_sequence
+            collatz_sequence_list.append(n)
+    return collatz_sequence_list
 
 
 def main():
@@ -25,7 +24,6 @@ def main():
     start = time.time()
 
     longest_length = 0
-    collatz_sequence_length = 0
     longest_number = 0
     number = 1000000
 
@@ -37,7 +35,7 @@ def main():
         number -= 1
     print(longest_number)
 
-    timeUtils.elapsed_time(time.time() - start)
+    timeutils.elapsed_time(time.time() - start)
 
 if __name__ == '__main__':
     sys.exit(main())

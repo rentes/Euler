@@ -1,7 +1,7 @@
 """Project Euler - Problem 13 - http://projecteuler.net/problem=13"""
 import sys
 import time
-import tools.timeutils as timeUtils
+import tools.timeutils as timeutils
 
 
 def main():
@@ -13,7 +13,7 @@ def main():
             b = int(line.strip())
             a += b
     print(str(a)[:10])
-    timeUtils.elapsed_time(time.time() - start)
+    timeutils.elapsed_time(time.time() - start)
 
 if __name__ == '__main__':
     sys.exit(main())

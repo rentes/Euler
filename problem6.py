@@ -9,17 +9,16 @@ def sum_square_less_square_sum():
     Finds the difference between the sum of the squares of the first one
     hundred natural numbers and the square of the sum.
     """
-    sumSquare = 0
-    squareSum = 0
+    sum_square = 0
 
     # sum of the squares
     for i in range(1, 101):
-        sumSquare += i ** 2
+        sum_square += i ** 2
 
     # square of the sum
-    squareSum = ((100 * 101) / 2) ** 2
+    square_sum = ((100 * 101) / 2) ** 2
 
-    print(int(squareSum - sumSquare))
+    print(int(square_sum - sum_square))
 
 
 def main():

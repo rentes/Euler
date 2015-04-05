@@ -1,7 +1,7 @@
 """Project Euler - Problem 12 - http://projecteuler.net/problem=12"""
 import sys
 import time
-import tools.timeutils as timeUtils
+import tools.timeutils as timeutils
 
 
 def number_of_factors(n):
@@ -10,7 +10,6 @@ def number_of_factors(n):
 
     Using a list to keep the factors found of number n
     """
-    quotient = 0
     max_limit = 0
     nr_factors = 2  # 1 and n are always factors
 
@@ -44,7 +43,7 @@ def main():
         triangular_number += n
         n += 1
 
-    timeUtils.elapsed_time(time.time() - start)
+    timeutils.elapsed_time(time.time() - start)
     print(triangular_number)
 
 

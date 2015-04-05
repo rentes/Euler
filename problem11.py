@@ -16,17 +16,16 @@ def fill_matrix():
             array.append(line.strip())
 
     # this is just a 2d array, not a matrix
-    matrixarray = np.loadtxt('problem11-data.txt', delimiter=' ')
+    matrix_array = np.loadtxt('problem11-data.txt', delimiter=' ')
     # this is a matrix
-    npmatrix = np.bmat(matrixarray)
-    return npmatrix
+    np_matrix = np.bmat(matrix_array)
+    return np_matrix
 
 
 def largest_product_horizontally(matrix):
     """
     Computes the largest product horizontally (line by line) on a given matrix
     """
-    product = 1
     largest_product = 1
     for line in range(0, matrix.shape[0]):
         for column in range(0, matrix.shape[1]-3):
@@ -36,7 +35,6 @@ def largest_product_horizontally(matrix):
                           matrix[line, column+3])
             if product > largest_product:
                 largest_product = product
-        product = 1
     return largest_product
 
 
@@ -46,8 +44,8 @@ def largest_product_vertically(matrix):
     on a given matrix
     """
     # rotating the matrix
-    matrix_vert = np.rot90(matrix)
-    return largest_product_horizontally(matrix_vert)
+    vertical_matrix = np.rot90(matrix)
+    return largest_product_horizontally(vertical_matrix)
 
 
 def largest_product_diagonally(matrix):
@@ -55,46 +53,45 @@ def largest_product_diagonally(matrix):
     Computes the largest product diagonally (NW, NE, SE, SW)
     on a given value [x, y]
     """
-    product_NW = 1
-    product_NE = 1
-    product_SE = 1
-    product_SW = 1
-    max_product = 1
+    product_nw = 1
+    product_ne = 1
+    product_se = 1
+    product_sw = 1
     largest_product = 1
     for line in range(0, matrix.shape[0]):
         for column in range(0, matrix.shape[1]):
             try:
                 # NW
-                product_NW = int(matrix[line, column] *
+                product_nw = int(matrix[line, column] *
                                  matrix[line-1, column-1] *
                                  matrix[line-2, column-2] *
                                  matrix[line-3, column-3])
                 # NE
-                product_NE = int(matrix[line, column] *
+                product_ne = int(matrix[line, column] *
                                  matrix[line-1, column+1] *
                                  matrix[line-2, column+2] *
                                  matrix[line-3, column+3])
                 # SE
-                product_SE = int(matrix[line, column] *
+                product_se = int(matrix[line, column] *
                                  matrix[line+1, column+1] *
                                  matrix[line+2, column+2] *
                                  matrix[line+3, column+3])
                 # SW
-                product_SW = int(matrix[line, column] *
+                product_sw = int(matrix[line, column] *
                                  matrix[line+1, column-1] *
                                  matrix[line+2, column-2] *
                                  matrix[line+3, column-3])
             except IndexError:
                 pass
-            max_product = max(product_NW, product_NE, product_SE, product_SW)
+            max_product = max(product_nw, product_ne, product_se, product_sw)
             if max_product > largest_product:
                 # update the largest value found
                 largest_product = max_product
             # resetting products for the 4 diagonals
-            product_NW = 1
-            product_NE = 1
-            product_SE = 1
-            product_SW = 1
+            product_nw = 1
+            product_ne = 1
+            product_se = 1
+            product_sw = 1
     return largest_product
 
 

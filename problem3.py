@@ -1,7 +1,7 @@
 """Project Euler - Problem 3 - http://projecteuler.net/problem=3"""
 import sys
 import time
-import tools.timeutils as timeUtils
+import tools.timeutils as timeutils
 
 
 def multiply_factors(l):
@@ -58,7 +58,7 @@ def main():
     start = time.time()
     # print the last value of the sorted list
     print(factors(600851475143)[-1])
-    timeUtils.elapsed_time(time.time() - start)
+    timeutils.elapsed_time(time.time() - start)
 
 if __name__ == '__main__':
     sys.exit(main())

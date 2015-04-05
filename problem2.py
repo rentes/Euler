@@ -1,7 +1,7 @@
 """Project Euler - Problem 2 - http://projecteuler.net/problem=2"""
 import sys
 import time
-import tools.timeutils as timeUtils
+import tools.timeutils as timeutils
 
 
 def fib(n):
@@ -26,21 +26,21 @@ def sum_fibonacci():
     """
     Find the sum of the even-valued terms of the Fibonacci sequence
     """
-    sum = 0
+    fib_sum = 0
     n = 1
 
-    while sum < 4000000:
+    while fib_sum < 4000000:
         if fib(n) % 2 == 0:
-            sum += fib(n)
+            fib_sum += fib(n)
         n += 1
-    print(sum)
+    print(fib_sum)
 
 
 def main():
     """Main entry point for the script"""
     start = time.time()
     sum_fibonacci()
-    timeUtils.elapsed_time(time.time() - start)
+    timeutils.elapsed_time(time.time() - start)
 
 
 if __name__ == '__main__':
