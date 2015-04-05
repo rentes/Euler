@@ -34,7 +34,7 @@ def is_prime(n):
     for x in range(3, int(n ** 0.5) + 1, 2):
         # dividing n for all numbers in range [3, sqrt(n) + 1]
         if n % x == 0:
-            # n is disible by x, so n is not a prime
+            # n is divisible by x, so n is not a prime
             return False
     # if we get here, then n is a prime
     return True

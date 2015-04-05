@@ -11,7 +11,7 @@ def main():
 
     # short explanation:
     # str(number) - converts number to string
-    # map(int, string) - converts each charater to int
+    # map(int, string) - converts each character to int
     # sum(list) - sums the list of ints (in this case)
     print(sum(map(int, str(int(math.pow(2, 1000))))))
 
